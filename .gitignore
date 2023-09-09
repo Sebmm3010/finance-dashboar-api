@@ -1,0 +1,55 @@
+# Dependencias de Node.js
+node_modules/
+
+# Archivos de dependencias generados
+package-lock.json
+yarn.lock
+
+# Configuración de entornos
+.env
+
+# Directorio de compilación
+dist/
+
+# Archivos de registro y estadísticas
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Archivos de respaldo y temporales
+*.bak
+*.swp
+*~
+
+# Dependencias locales de desarrollo
+/.pnp/
+.pnp.js
+
+# Directorio de cobertura de pruebas
+coverage/
+
+# Directorio de resultados de pruebas
+nyc_output/
+
+# Archivos de configuración de pruebas
+jest.config.js
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Dependencias binarias (por ejemplo, nodos nativos o archivos binarios compilados)
+node_modules/.bin/
+
+# Archivos de configuración de editor
+.editorconfig
+.eslintcache
+
+# Archivos de registro de depuración
+debug.log
+
+# Historial de comandos de repl (por ejemplo, node-historial)
+.node_repl_history

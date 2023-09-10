@@ -9,6 +9,7 @@ yarn.lock
 .env
 
 # Directorio de compilación
+mongo/
 dist/
 
 # Archivos de registro y estadísticas

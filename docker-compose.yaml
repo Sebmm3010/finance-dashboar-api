@@ -2,11 +2,11 @@ version: "3"
 services:
   db:
     image: mongo:5
-    container_name: dashboard_db
+    container_name: dashboard
     restart: always
     ports:
       - 27018:27017
     environment:
-      MONGODB_DATABASE: dashboard
+      MONGODB_DATABASE: dashboard_db
     volumes:
       - ./mongo:/data/db

@@ -16,6 +16,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-console.log('first')
-
 /* Mongoose */
+const PORT = process.env.PORT || 8080;
+mongoose
+  .connect(process.env.MONGO_URL as string)
+  .then(async () => {
+    app.listen(PORT, () => console.log(`Server corriendo en puerto ${PORT}`));
+  })
+  .catch((err) => console.log(`${err} sin conexion`));

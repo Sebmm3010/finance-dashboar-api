@@ -4,7 +4,7 @@ import { IKpi } from "../interfaces";
 
 loadType(mongoose);
 
-const monthlyDataSchema = new Schema(
+const monthSchema = new Schema(
   {
     month: String,
     revenue: {
@@ -35,9 +35,9 @@ const monthlyDataSchema = new Schema(
   { toJSON: { getters: true } }
 );
 
-const dailyDataSchema = new Schema(
+const dailySchema = new Schema(
   {
-    day: String,
+    date: String,
     revenue: {
       // @ts-ignore
       type: mongoose.Types.Currency,
@@ -74,7 +74,7 @@ const KpiSchema = new Schema(
       currency: "USD",
       get: (v: any) => v / 100,
     },
-    exprensesByCategory: {
+    expensesByCategory: {
       type: Map,
       currency: "USD",
       of: {
@@ -83,9 +83,9 @@ const KpiSchema = new Schema(
         currency: "USD",
         get: (v: any) => v / 100,
       },
-      monthlyData: [monthlyDataSchema],
-      dailyData: [dailyDataSchema],
     },
+    monthlyData: [monthSchema],
+    dailyData: [dailySchema],
   },
   { toJSON: { getters: true }, timestamps: true }
 );

@@ -5,8 +5,8 @@ import express from "express";
 import helmet from "helmet";
 import mongoose from "mongoose";
 import morgan from "morgan";
-import { Kpi } from "./models";
-import { kpis } from "./data";
+// import { Kpi } from "./models";
+// import { kpis } from "./data";
 
 /* Configuracion */
 dotenv.config();
@@ -20,7 +20,6 @@ app.use(cors());
 
 /* Rutas */
 
-// app.use('/kpi', kpiRoutes)
 
 /* Mongoose */
 const PORT = process.env.PORT || 8080;

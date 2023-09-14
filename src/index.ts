@@ -20,13 +20,17 @@ app.use(cors());
 /* Rutas */
 app.use("/kpis", kpiRoutes);
 app.use("/products", productRoutes);
-// app.use("/seed", seedRoutes);
+if (process.env.ENVIROMENT === "dev") {
+  app.use("/seed", seedRoutes);
+}
 
 /* Mongoose */
 const PORT = process.env.PORT || 8080;
 mongoose
   .connect(process.env.MONGO_URL as string)
   .then(async () => {
-    app.listen(PORT, () => console.log(`Server corriendo en puerto ${PORT}`));
+    app.listen(PORT, () =>
+      console.log(`Server corriendo en puerto ${PORT}`)
+    );
   })
   .catch((err) => console.log(`${err} sin conexion`));

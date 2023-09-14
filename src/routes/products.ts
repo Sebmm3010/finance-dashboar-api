@@ -1,12 +1,12 @@
 import express from "express";
-import { KpiModel } from "../models";
+import { ProductModel } from "../models";
 
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const kpis = await KpiModel.find();
-    res.status(200).json(kpis);
+    const products = await ProductModel.find();
+    res.status(200).json(products);
   } catch (error: any) {
     res.status(404).json({ msg: error.message });
   }

@@ -5,9 +5,7 @@ import express from "express";
 import helmet from "helmet";
 import mongoose from "mongoose";
 import morgan from "morgan";
-import kpiroutes from "./routes/kpi";
-// import { Kpi } from "./models";
-// import { kpis } from "./data";
+import { kpiRoutes, productRoutes, seedRoutes } from "./routes";
 
 /* Configuracion */
 dotenv.config();
@@ -20,7 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 /* Rutas */
-app.use("/kpis", kpiroutes);
+app.use("/kpis", kpiRoutes);
+app.use("/products", productRoutes);
+// app.use("/seed", seedRoutes);
 
 /* Mongoose */
 const PORT = process.env.PORT || 8080;
@@ -28,9 +28,5 @@ mongoose
   .connect(process.env.MONGO_URL as string)
   .then(async () => {
     app.listen(PORT, () => console.log(`Server corriendo en puerto ${PORT}`));
-
-    /* Seed */
-    // await mongoose.connection.db.dropDatabase();
-    // Kpi.insertMany(kpis);
   })
   .catch((err) => console.log(`${err} sin conexion`));

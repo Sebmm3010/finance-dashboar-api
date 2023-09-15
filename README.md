@@ -9,6 +9,7 @@
 <p align="center">
   <a href="#caracteristicas">Caracteristicas</a> •
   <a href="#como-usar">Como usar?</a> •
+  <a href="#rutas">Rutas</a> •
   <a href="#creditos">Creditos</a> •
   <a href="#licencia">Licencia</a>
 </p>

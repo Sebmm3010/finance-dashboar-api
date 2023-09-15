@@ -7,7 +7,6 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    await mongoose.connection.db.dropDatabase();
     KpiModel.insertMany(kpis);
     ProductModel.insertMany(products);
     TransactionModel.insertMany(transactions);
